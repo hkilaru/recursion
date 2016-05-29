@@ -20,7 +20,9 @@ var stringifyJSON = function(obj) {
   }
   else if(typeof obj === "object") {
     var objKeys = [];
-    objKeys = Object.keys(obj);
+    for (var key in obj) {
+      objKeys.push(key);
+    }
     var objKeyVals = [];
     objKeys.forEach(function(key) {
       var keyString = '"' + key + '":';
